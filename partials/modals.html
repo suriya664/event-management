@@ -1,0 +1,223 @@
+<!-- 
+==============================================
+MODALS - Reusable Modal Dialogs
+Include this before closing body tag
+==============================================
+-->
+
+<!-- Registration Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel">
+                    <i class="fas fa-user-plus"></i> Event Registration
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="register-form-modal">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="modal-register-name">Full Name *</label>
+                            <input type="text" class="form-control" id="modal-register-name" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="modal-register-email">Email Address *</label>
+                            <input type="email" class="form-control" id="modal-register-email" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="modal-register-phone">Phone (+91) *</label>
+                            <input type="tel" class="form-control" id="modal-register-phone" placeholder="+91 98765 43210" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="modal-register-organization">Organization</label>
+                            <input type="text" class="form-control" id="modal-register-organization">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="modal-register-ticket">Ticket Type *</label>
+                            <select class="form-control" id="modal-register-ticket" required>
+                                <option value="">Select Ticket</option>
+                                <option value="early-bird">Early Bird - ₹999</option>
+                                <option value="regular">Regular - ₹1,499</option>
+                                <option value="vip">VIP - ₹2,999</option>
+                                <option value="group">Group (5+) - ₹899/person</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="modal-register-designation">Designation</label>
+                            <input type="text" class="form-control" id="modal-register-designation">
+                        </div>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="modal-terms" required>
+                        <label class="form-check-label" for="modal-terms">
+                            I agree to the <a href="privacy-policy.html" target="_blank">Terms & Conditions</a>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" form="register-form-modal" class="btn btn-primary">
+                    <i class="fas fa-check"></i> Complete Registration
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Ticket Details Modal -->
+<div class="modal fade" id="ticketModal" tabindex="-1" aria-labelledby="ticketModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ticketModalLabel">Ticket Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="ticket-details-content">
+                <!-- Ticket details will be populated dynamically -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" data-bs-dismiss="modal">Close</button>
+                <a href="register.html" class="btn btn-primary">Purchase Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Speaker Details Modal -->
+<div class="modal fade" id="speakerModal" tabindex="-1" aria-labelledby="speakerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="speakerModalLabel">Speaker Profile</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="speaker-details-content">
+                <!-- Speaker details will be populated dynamically -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Video Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="videoModalLabel">Event Highlights</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+                <div class="ratio ratio-16x9">
+                    <iframe id="video-iframe" src="" title="Event Video" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Success Message Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <div class="modal-body p-5">
+                <div class="mb-4">
+                    <i class="fas fa-check-circle text-success" style="font-size: 5rem;"></i>
+                </div>
+                <h3>Success!</h3>
+                <p id="success-message">Your action was completed successfully.</p>
+                <button type="button" class="btn btn-primary mt-3" data-bs-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Error Message Modal -->
+<div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <div class="modal-body p-5">
+                <div class="mb-4">
+                    <i class="fas fa-exclamation-circle text-danger" style="font-size: 5rem;"></i>
+                </div>
+                <h3>Error!</h3>
+                <p id="error-message">Something went wrong. Please try again.</p>
+                <button type="button" class="btn btn-primary mt-3" data-bs-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Modal Helper Functions
+function showTicketDetails(ticketName, price, features) {
+    const content = document.getElementById('ticket-details-content');
+    content.innerHTML = `
+        <div class="text-center mb-4">
+            <h3>${ticketName}</h3>
+            <h2 class="text-primary">₹${price}</h2>
+        </div>
+        <ul class="list-group">
+            ${features.map(feature => `<li class="list-group-item"><i class="fas fa-check text-success me-2"></i>${feature}</li>`).join('')}
+        </ul>
+    `;
+    const modal = new bootstrap.Modal(document.getElementById('ticketModal'));
+    modal.show();
+}
+
+function showSpeakerDetails(name, designation, bio, image, social) {
+    const content = document.getElementById('speaker-details-content');
+    content.innerHTML = `
+        <div class="row">
+            <div class="col-md-4 text-center mb-3">
+                <img src="${image}" alt="${name}" class="img-fluid rounded-circle mb-3" style="max-width: 200px;">
+                <div class="social-links justify-content-center">
+                    ${social.twitter ? `<a href="${social.twitter}"><i class="fab fa-twitter"></i></a>` : ''}
+                    ${social.linkedin ? `<a href="${social.linkedin}"><i class="fab fa-linkedin-in"></i></a>` : ''}
+                    ${social.website ? `<a href="${social.website}"><i class="fas fa-globe"></i></a>` : ''}
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h3>${name}</h3>
+                <p class="text-accent">${designation}</p>
+                <p>${bio}</p>
+            </div>
+        </div>
+    `;
+    const modal = new bootstrap.Modal(document.getElementById('speakerModal'));
+    modal.show();
+}
+
+function showVideo(videoUrl) {
+    document.getElementById('video-iframe').src = videoUrl;
+    const modal = new bootstrap.Modal(document.getElementById('videoModal'));
+    modal.show();
+    
+    // Clear video when modal is closed
+    document.getElementById('videoModal').addEventListener('hidden.bs.modal', function() {
+        document.getElementById('video-iframe').src = '';
+    });
+}
+
+function showSuccessModal(message) {
+    document.getElementById('success-message').textContent = message;
+    const modal = new bootstrap.Modal(document.getElementById('successModal'));
+    modal.show();
+}
+
+function showErrorModal(message) {
+    document.getElementById('error-message').textContent = message;
+    const modal = new bootstrap.Modal(document.getElementById('errorModal'));
+    modal.show();
+}
+</script>
+

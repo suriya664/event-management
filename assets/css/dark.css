@@ -1,0 +1,360 @@
+/*
+==============================================
+DARK THEME STYLES - dark.css
+Dark Mode Color Scheme
+==============================================
+*/
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+    --primary-color: #4a9eff;
+    --secondary-color: #9ca3af;
+    --accent-color: #ff8533;
+    --dark-bg: #0f0f0f;
+    --light-bg: #1a1a1a;
+    --card-bg: #242424;
+    --text-dark: #f5f5f5;
+    --text-light: #b0b0b0;
+    --border-color: #333333;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+/* Apply dark theme when data-theme="dark" */
+[data-theme="dark"] body {
+    background-color: var(--dark-bg);
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] p {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] a {
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] a:hover {
+    color: var(--accent-color);
+}
+
+/* ========== Navbar ========== */
+[data-theme="dark"] .navbar {
+    background-color: rgba(26, 26, 26, 0.98);
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .navbar-brand {
+    color: var(--primary-color) !important;
+}
+
+[data-theme="dark"] .navbar-nav .nav-link {
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .navbar-nav .nav-link:hover,
+[data-theme="dark"] .navbar-nav .nav-link.active {
+    color: var(--accent-color);
+}
+
+[data-theme="dark"] .navbar-toggler {
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* ========== Hero Section ========== */
+[data-theme="dark"] .hero-section {
+    background: linear-gradient(135deg, rgba(15, 15, 15, 0.9), rgba(74, 158, 255, 0.3)),
+                url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1920&q=80');
+}
+
+[data-theme="dark"] .countdown-item {
+    background: rgba(74, 158, 255, 0.15);
+    border: 1px solid rgba(74, 158, 255, 0.3);
+}
+
+/* ========== Cards ========== */
+[data-theme="dark"] .speaker-card,
+[data-theme="dark"] .blog-card,
+[data-theme="dark"] .ticket-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .speaker-card:hover,
+[data-theme="dark"] .blog-card:hover,
+[data-theme="dark"] .ticket-card:hover {
+    border-color: var(--primary-color);
+}
+
+[data-theme="dark"] .speaker-social a {
+    background: rgba(74, 158, 255, 0.2);
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .speaker-social a:hover {
+    background: var(--accent-color);
+    color: #ffffff;
+}
+
+[data-theme="dark"] .speaker-info .company {
+    color: var(--text-light);
+}
+
+/* ========== Schedule ========== */
+[data-theme="dark"] .schedule-item {
+    background-color: var(--card-bg);
+    border-left-color: var(--primary-color);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .schedule-content h4 {
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .schedule-speaker .speaker-name {
+    color: var(--text-dark);
+}
+
+/* ========== Tickets ========== */
+[data-theme="dark"] .ticket-card.featured {
+    border-color: var(--accent-color);
+    background-color: rgba(255, 133, 51, 0.05);
+}
+
+[data-theme="dark"] .ticket-price {
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .ticket-features li {
+    border-color: var(--border-color);
+}
+
+/* ========== Sponsors ========== */
+[data-theme="dark"] .sponsor-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .sponsor-item img {
+    filter: grayscale(100%) brightness(0.8);
+}
+
+[data-theme="dark"] .sponsor-item:hover img {
+    filter: grayscale(0%) brightness(1);
+}
+
+/* ========== Gallery ========== */
+[data-theme="dark"] .gallery-overlay {
+    background: linear-gradient(135deg, rgba(74, 158, 255, 0.9), rgba(255, 133, 51, 0.9));
+}
+
+/* ========== Blog ========== */
+[data-theme="dark"] .blog-meta {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .blog-content h3 a {
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .blog-content h3 a:hover {
+    color: var(--accent-color);
+}
+
+/* ========== Forms ========== */
+[data-theme="dark"] .contact-form {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .form-control {
+    background-color: var(--light-bg);
+    border-color: var(--border-color);
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .form-control:focus {
+    background-color: var(--light-bg);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.1);
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .form-control::placeholder {
+    color: var(--text-light);
+    opacity: 0.6;
+}
+
+[data-theme="dark"] .form-group label {
+    color: var(--text-dark);
+}
+
+/* ========== Buttons ========== */
+[data-theme="dark"] .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+[data-theme="dark"] .btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .btn-outline {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+[data-theme="dark"] .btn-outline:hover {
+    background-color: var(--primary-color);
+}
+
+/* ========== Footer ========== */
+[data-theme="dark"] .footer {
+    background-color: #0a0a0a;
+    border-top: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .footer-bottom {
+    border-top-color: var(--border-color);
+}
+
+/* ========== Modals ========== */
+[data-theme="dark"] .modal-content {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .modal-header {
+    border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .modal-footer {
+    border-top-color: var(--border-color);
+}
+
+[data-theme="dark"] .modal-header .btn-close {
+    filter: invert(1);
+}
+
+/* ========== Tables ========== */
+[data-theme="dark"] .table {
+    color: var(--text-dark);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+[data-theme="dark"] .table-hover tbody tr:hover {
+    background-color: rgba(74, 158, 255, 0.1);
+}
+
+/* ========== Dashboard ========== */
+[data-theme="dark"] .dashboard-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .sidebar {
+    background-color: var(--card-bg);
+    border-right: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .sidebar-link {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .sidebar-link:hover,
+[data-theme="dark"] .sidebar-link.active {
+    background-color: rgba(74, 158, 255, 0.1);
+    color: var(--primary-color);
+}
+
+/* ========== Theme Toggle Button ========== */
+.theme-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon {
+    display: block;
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+    display: none;
+}
+
+[data-theme="light"] .theme-toggle .sun-icon {
+    display: none;
+}
+
+[data-theme="light"] .theme-toggle .moon-icon {
+    display: block;
+}
+
+/* ========== Scrollbar ========== */
+[data-theme="dark"] ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 5px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* ========== Selection ========== */
+[data-theme="dark"] ::selection {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+[data-theme="dark"] ::-moz-selection {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+

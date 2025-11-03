@@ -1,0 +1,172 @@
+<!-- 
+==============================================
+DASHBOARD SIDEBAR - Reusable Partial
+Include this in dashboard pages
+==============================================
+-->
+
+<div class="sidebar bg-white shadow-sm" style="min-height: 100vh; position: sticky; top: 0;">
+    <div class="p-4">
+        <!-- Brand -->
+        <div class="mb-4">
+            <h4 class="mb-0">
+                <i class="fas fa-calendar-alt text-primary"></i>
+                <strong>EventPro</strong>
+            </h4>
+            <small class="text-muted">Admin Dashboard</small>
+        </div>
+
+        <!-- User Profile -->
+        <div class="d-flex align-items-center mb-4 p-3 bg-light rounded">
+            <img src="https://ui-avatars.com/api/?name=Admin+User&background=0056b3&color=fff&size=50" 
+                 alt="Admin" 
+                 class="rounded-circle me-3" 
+                 style="width: 50px; height: 50px;">
+            <div>
+                <h6 class="mb-0">Admin User</h6>
+                <small class="text-muted">admin@eventpro.com</small>
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="sidebar-nav">
+            <ul class="list-unstyled">
+                <li class="mb-2">
+                    <a href="dashboard.html" class="sidebar-link d-flex align-items-center p-2 rounded">
+                        <i class="fas fa-chart-line me-2" style="width: 20px;"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="mb-2">
+                    <a href="#" class="sidebar-link d-flex align-items-center p-2 rounded">
+                        <i class="fas fa-users me-2" style="width: 20px;"></i>
+                        Attendees
+                    </a>
+                </li>
+                <li class="mb-2">
+                    <a href="speakers.html" class="sidebar-link d-flex align-items-center p-2 rounded">
+                        <i class="fas fa-microphone me-2" style="width: 20px;"></i>
+                        Speakers
+                    </a>
+                </li>
+                <li class="mb-2">
+                    <a href="schedule.html" class="sidebar-link d-flex align-items-center p-2 rounded">
+                        <i class="fas fa-calendar me-2" style="width: 20px;"></i>
+                        Schedule
+                    </a>
+                </li>
+                <li class="mb-2">
+                    <a href="tickets.html" class="sidebar-link d-flex align-items-center p-2 rounded">
+                        <i class="fas fa-ticket-alt me-2" style="width: 20px;"></i>
+                        Tickets
+                    </a>
+                </li>
+                <li class="mb-2">
+                    <a href="sponsors.html" class="sidebar-link d-flex align-items-center p-2 rounded">
+                        <i class="fas fa-handshake me-2" style="width: 20px;"></i>
+                        Sponsors
+                    </a>
+                </li>
+                <li class="mb-2">
+                    <a href="#" class="sidebar-link d-flex align-items-center p-2 rounded">
+                        <i class="fas fa-envelope me-2" style="width: 20px;"></i>
+                        Messages
+                        <span class="badge bg-danger ms-auto">5</span>
+                    </a>
+                </li>
+                <li class="mb-2">
+                    <a href="gallery.html" class="sidebar-link d-flex align-items-center p-2 rounded">
+                        <i class="fas fa-images me-2" style="width: 20px;"></i>
+                        Gallery
+                    </a>
+                </li>
+                <li class="mb-2">
+                    <a href="blog.html" class="sidebar-link d-flex align-items-center p-2 rounded">
+                        <i class="fas fa-blog me-2" style="width: 20px;"></i>
+                        Blog Posts
+                    </a>
+                </li>
+                
+                <li class="mt-4 mb-2">
+                    <small class="text-muted text-uppercase px-2">Settings</small>
+                </li>
+                <li class="mb-2">
+                    <a href="#" class="sidebar-link d-flex align-items-center p-2 rounded">
+                        <i class="fas fa-cog me-2" style="width: 20px;"></i>
+                        Settings
+                    </a>
+                </li>
+                <li class="mb-2">
+                    <a href="#" class="sidebar-link d-flex align-items-center p-2 rounded">
+                        <i class="fas fa-bell me-2" style="width: 20px;"></i>
+                        Notifications
+                    </a>
+                </li>
+                <li class="mb-2">
+                    <a href="index.html" class="sidebar-link d-flex align-items-center p-2 rounded">
+                        <i class="fas fa-home me-2" style="width: 20px;"></i>
+                        View Website
+                    </a>
+                </li>
+                <li class="mb-2">
+                    <a href="login.html" class="sidebar-link d-flex align-items-center p-2 rounded text-danger">
+                        <i class="fas fa-sign-out-alt me-2" style="width: 20px;"></i>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<style>
+.sidebar {
+    max-width: 280px;
+}
+
+.sidebar-link {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.sidebar-link:hover {
+    background-color: rgba(0, 86, 179, 0.1);
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.sidebar-link.active {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.sidebar-link.active:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+@media (max-width: 991px) {
+    .sidebar {
+        position: relative !important;
+        max-width: 100%;
+        min-height: auto !important;
+    }
+}
+</style>
+
+<script>
+// Set active sidebar link based on current page
+document.addEventListener('DOMContentLoaded', function() {
+    const currentPage = window.location.pathname.split('/').pop();
+    const sidebarLinks = document.querySelectorAll('.sidebar-link');
+    
+    sidebarLinks.forEach(function(link) {
+        const linkHref = link.getAttribute('href');
+        if (linkHref === currentPage || (currentPage === '' && linkHref === 'dashboard.html')) {
+            link.classList.add('active');
+        }
+    });
+});
+</script>
+
